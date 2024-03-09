@@ -30,7 +30,7 @@ class ParkingDetails extends StatelessWidget {
               ),
               Text(
                 typeofTrans,
-                style: TextStyle(color: KTextColor2, fontSize: 17),
+                style: TextStyle(color: KTextColor2, fontSize: 15),
               )
             ],
           ),
@@ -39,7 +39,7 @@ class ParkingDetails extends StatelessWidget {
             children: [
               Text(
                 "AED $price/day",
-                style: TextStyle(color: KPrimaryKcolor),
+                style: TextStyle(color: KPrimaryKcolor, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 width: 5,

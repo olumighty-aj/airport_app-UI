@@ -1,9 +1,15 @@
 import 'package:airport_app/constant.dart';
+import 'package:airport_app/view/home/contact_airport.dart';
+import 'package:airport_app/view/home/foriegn_exchange.dart';
+import 'package:airport_app/view/home/self_parking.dart';
+import 'package:airport_app/view/home/taxi_service.dart';
+import 'package:airport_app/view/home/terminal_map.dart';
 import 'package:airport_app/view/home/transport_service.dart';
 import 'package:airport_app/widget/airport_details.dart';
-import 'package:airport_app/widget/parking_details.dart';
-import 'package:airport_app/widget/public_tansport.dart';
+import 'package:airport_app/widget/black_button.dart';
+import 'package:airport_app/widget/contacts.dart';
 import 'package:airport_app/widget/small_tab.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -31,7 +37,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
             child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -72,7 +78,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Positioned(
                       bottom: 10,
-                      left: 7,
+                      left: 12,
                       child: Center(
                         child: Container(
                           height: 140,
@@ -176,7 +182,7 @@ class HomePage extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height,
                 child: DefaultTabController(
-                  length: 4, // Number of tabs
+                  length: 4,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
@@ -224,99 +230,53 @@ class HomePage extends StatelessWidget {
                           child: TabBarView(
                             children: [
                               SingleChildScrollView(
-                                child: Container(
-                                  child: Column(
-                                    children: [
-                                      Taxis_services(
-                                          taxiServices: taxiServices),
-                                      Transport_services(),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 20, horizontal: 5),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              // border: Border.all(
-                                              //     color: KboderColor, width: 2),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.white
-                                                      .withOpacity(0.7),
-                                                  spreadRadius: 1,
-                                                  blurRadius: 7,
-                                                  offset: const Offset(0, 3),
-                                                ),
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 10,
-                                                        vertical: 10),
-                                                child: Text(
-                                                  "Self Parking",
-                                                  style: TextStyle(
-                                                      color: KPrimaryKcolor,
-                                                      fontSize: 25,
-                                                      fontWeight:
-                                                          FontWeight.w800),
-                                                ),
-                                              ),
-                                              Column(
-                                                children: [
-                                                  Padding(
-                                                    padding: const EdgeInsets
-                                                        .symmetric(
-                                                        horizontal: 10),
-                                                    child: Row(
-                                                      children: [
-                                                        smallTab(
-                                                          title: "T1",
-                                                          color: KPrimaryKcolor,
-                                                          textColor:
-                                                              Colors.white,
-                                                        ),
-                                                        const SizedBox(
-                                                          width: 15,
-                                                        ),
-                                                        smallTab(
-                                                          title: "T2",
-                                                          color:
-                                                              KContainerColor,
-                                                          textColor:
-                                                              Colors.black,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  ParkingDetails(
-                                                    icon: "assets/svg/bike.svg",
-                                                    typeofTrans: "Two wheeler",
-                                                    price: 50,
-                                                  ),
-                                                  ParkingDetails(
-                                                    icon: "assets/svg/car.svg",
-                                                    typeofTrans: "Car Parking",
-                                                    price: 100, 
-                                                  ),
-                                                  ParkingDetails(
-                                                    icon: "assets/svg/fastcar.svg",
-                                                    typeofTrans: "Electric Car Parking",
-                                                    price: 100,
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                child: Column(
+                                  children: [
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Taxis_services(taxiServices: taxiServices),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Transport_services(),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Self_parking(),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Terminal_map(),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    AccordionSection(),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Contact_airport(),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        black_button(
+                                          icon:
+                                              "assets/svg/white_direction.svg",
+                                          text: "Get direction",
                                         ),
-                                      )
-                                    ],
-                                  ),
+                                        black_button(
+                                          icon: "assets/svg/white_call.svg",
+                                          text: "Call airport",
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                  ],
                                 ),
                               ),
                               Container(
@@ -342,88 +302,6 @@ class HomePage extends StatelessWidget {
             ],
           ),
         )),
-      ),
-    );
-  }
-}
-
-class Taxis_services extends StatelessWidget {
-  const Taxis_services({
-    super.key,
-    required this.taxiServices,
-  });
-
-  final List<Map<String, dynamic>> taxiServices;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.grey.shade100,
-            border: Border.all(color: KContainerColor, width: 2),
-            borderRadius: BorderRadius.circular(20)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-              child: Text(
-                "Taxi Service",
-                style: TextStyle(
-                    color: KPrimaryKcolor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w800),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 10, right: 10),
-              child: GridView.builder(
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 7,
-                  crossAxisSpacing: 7,
-                ),
-                itemCount: taxiServices.length,
-                itemBuilder: (context, index) {
-                  final item = taxiServices[index];
-
-                  return Container(
-                      height: 80,
-                      width: 85,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Center(
-                              child: Image.asset(
-                            item['imagePath'],
-                            width: 100,
-                          )),
-                          const Spacer(),
-                          Center(
-                            child: Text(
-                              "\$\$\$\$\$\$\$",
-                              style: TextStyle(
-                                  color: KsmallTextKcolor, fontSize: 11),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          )
-                        ],
-                      ));
-                },
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
