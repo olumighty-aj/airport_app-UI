@@ -23,7 +23,7 @@ class contacts extends StatelessWidget {
                 style: TextStyle(
                     color: KPrimaryKcolor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 20),
+                    fontSize: 16),
               ),
               Container(
                 height: 37,

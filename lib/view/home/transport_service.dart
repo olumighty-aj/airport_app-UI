@@ -1,6 +1,6 @@
 
 import 'package:airport_app/constant.dart';
-import 'package:airport_app/widget/public_tansport.dart';
+import 'package:airport_app/view/home/widget/public_tansport.dart';
 import 'package:flutter/material.dart';
 
 class Transport_services extends StatelessWidget {
@@ -14,6 +14,10 @@ class Transport_services extends StatelessWidget {
       color: Colors.white,
       elevation: 1,
         shape: RoundedRectangleBorder(
+          side: const BorderSide(
+      color: Colors.white,
+      width: 1.0,
+    ),
     borderRadius: BorderRadius.circular(20),
         ),
       child: Padding(
@@ -31,9 +35,9 @@ class Transport_services extends StatelessWidget {
                 "Public Transport",
                 style: TextStyle(
                     color: KPrimaryKcolor,
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight:
-                        FontWeight.w800),
+                        FontWeight.bold),
               ),
             ),
             const Column(

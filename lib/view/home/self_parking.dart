@@ -1,6 +1,6 @@
 import 'package:airport_app/constant.dart';
-import 'package:airport_app/widget/parking_details.dart';
-import 'package:airport_app/widget/small_tab.dart';
+import 'package:airport_app/view/home/widget/parking_details.dart';
+import 'package:airport_app/view/home/widget/small_tab.dart';
 import 'package:flutter/material.dart';
 
 class Self_parking extends StatelessWidget {
@@ -14,6 +14,10 @@ class Self_parking extends StatelessWidget {
       color: Colors.white,
       elevation: 1,
         shape: RoundedRectangleBorder(
+          side: const BorderSide(
+      color: Colors.white,
+      width: 1.0,
+    ),
     borderRadius: BorderRadius.circular(20),
         ),
       child: Padding(
@@ -31,11 +35,12 @@ class Self_parking extends StatelessWidget {
                 "Self Parking",
                 style: TextStyle(
                     color: KPrimaryKcolor,
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight:
-                        FontWeight.w800),
+                        FontWeight.w500),
               ),
             ),
+            
             Column(
               children: [
                 Padding(
@@ -63,6 +68,7 @@ class Self_parking extends StatelessWidget {
                     ],
                   ),
                 ),
+              const  SizedBox(height: 10,),
                 ParkingDetails(
                   icon: "assets/svg/bike.svg",
                   typeofTrans: "Two wheeler",

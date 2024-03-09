@@ -13,9 +13,14 @@ class Taxis_services extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      
       color: Colors.white,
       elevation: 1,
         shape: RoundedRectangleBorder(
+          side: const BorderSide(
+      color: Colors.white,
+      width: 1.0,
+    ),
     borderRadius: BorderRadius.circular(20),
         ),
       child: Column(
@@ -26,9 +31,10 @@ class Taxis_services extends StatelessWidget {
             child: Text(
               "Taxi Service",
               style: TextStyle(
+                
                   color: KPrimaryKcolor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w800),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
@@ -63,7 +69,10 @@ class Taxis_services extends StatelessWidget {
                           child: Text(
                             "\$\$\$\$\$\$\$",
                             style: TextStyle(
-                                color: KsmallTextKcolor, fontSize: 11),
+                              letterSpacing: 2,
+                                color: KDolarText, 
+                                fontWeight: FontWeight.w500,
+                                fontSize: 11),
                           ),
                         ),
                         const SizedBox(

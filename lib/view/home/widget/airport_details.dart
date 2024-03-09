@@ -24,16 +24,14 @@ class Airport_details extends StatelessWidget {
         ),
         Text(
           detail,
-          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
         ),
-        const SizedBox(
-          height: 3,
-        ),
+        
         Text(
           littledetail,
           style: TextStyle(
               color: KsmallTextKcolor,
-              fontSize: 12,
+              fontSize: 11,
               fontWeight: FontWeight.normal),
         ),
       ],

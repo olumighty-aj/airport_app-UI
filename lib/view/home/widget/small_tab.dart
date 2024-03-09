@@ -5,7 +5,11 @@ class smallTab extends StatelessWidget {
   final Color color;
   final Color textColor;
 
-  const smallTab({super.key, required this.title, required this.color, required this.textColor});
+  const smallTab(
+      {super.key,
+      required this.title,
+      required this.color,
+      required this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class smallTab extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-              fontSize: 20, color: textColor, fontWeight: FontWeight.bold),
+              fontSize: 16, color: textColor, fontWeight: FontWeight.bold),
         ),
       ),
     );

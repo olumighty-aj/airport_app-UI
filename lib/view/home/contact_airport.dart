@@ -1,5 +1,5 @@
 import 'package:airport_app/constant.dart';
-import 'package:airport_app/widget/contacts.dart';
+import 'package:airport_app/view/home/widget/contacts.dart';
 import 'package:flutter/material.dart';
 
 class Contact_airport extends StatelessWidget {
@@ -13,6 +13,10 @@ class Contact_airport extends StatelessWidget {
       color: Colors.white,
       elevation: 1,
       shape: RoundedRectangleBorder(
+        side: const BorderSide(
+      color: Colors.white,
+      width: 1.0,
+    ),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
@@ -31,9 +35,9 @@ class Contact_airport extends StatelessWidget {
                 "Contact Airport",
                 style: TextStyle(
                     color: KPrimaryKcolor,
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight:
-                        FontWeight.w800),
+                        FontWeight.w500),
               ),
             ),
             const Column(

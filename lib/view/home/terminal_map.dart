@@ -1,5 +1,5 @@
 import 'package:airport_app/constant.dart';
-import 'package:airport_app/widget/small_tab.dart';
+import 'package:airport_app/view/home/widget/small_tab.dart';
 import 'package:flutter/material.dart';
 
 class Terminal_map extends StatelessWidget {
@@ -13,6 +13,10 @@ class Terminal_map extends StatelessWidget {
       color: Colors.white,
       elevation: 1,
         shape: RoundedRectangleBorder(
+          side: const BorderSide(
+      color: Colors.white,
+      width: 1.0,
+    ),
     borderRadius: BorderRadius.circular(20),
         ),
       child: Column(
@@ -24,8 +28,8 @@ class Terminal_map extends StatelessWidget {
               "Terminal Map",
               style: TextStyle(
                   color: KPrimaryKcolor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w800),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
             ),
           ),
           Column(

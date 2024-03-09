@@ -31,6 +31,10 @@ class _AccordionSectionState extends State<AccordionSection> {
       color: Colors.white,
       elevation: 1,
       shape: RoundedRectangleBorder(
+        side: const BorderSide(
+      color: Colors.white,
+      width: 1.0,
+    ),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
@@ -44,8 +48,8 @@ class _AccordionSectionState extends State<AccordionSection> {
                 "Foreign exchange",
                 style: TextStyle(
                     color: KPrimaryKcolor,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w800),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500),
               ),
             ),
             ExpansionPanelList.radio(

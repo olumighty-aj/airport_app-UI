@@ -25,8 +25,8 @@ class PublicTransport extends StatelessWidget {
                 transport,
                 style: TextStyle(
                     color: KPrimaryKcolor,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w800),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
               )
             ],
           ),

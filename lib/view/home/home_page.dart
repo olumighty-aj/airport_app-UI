@@ -1,14 +1,15 @@
 import 'package:airport_app/constant.dart';
+import 'package:airport_app/view/flight/flight_page.dart';
 import 'package:airport_app/view/home/contact_airport.dart';
 import 'package:airport_app/view/home/foriegn_exchange.dart';
 import 'package:airport_app/view/home/self_parking.dart';
 import 'package:airport_app/view/home/taxi_service.dart';
 import 'package:airport_app/view/home/terminal_map.dart';
 import 'package:airport_app/view/home/transport_service.dart';
-import 'package:airport_app/widget/airport_details.dart';
-import 'package:airport_app/widget/black_button.dart';
-import 'package:airport_app/widget/contacts.dart';
-import 'package:airport_app/widget/small_tab.dart';
+import 'package:airport_app/view/home/widget/airport_details.dart';
+import 'package:airport_app/view/home/widget/black_button.dart';
+import 'package:airport_app/view/home/widget/contacts.dart';
+import 'package:airport_app/view/home/widget/small_tab.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,17 +48,17 @@ class HomePage extends StatelessWidget {
                   Text(
                     "Dubai Airport - DXB",
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 22,
+                        color: KPrimaryKcolor,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
                   Row(
                     children: [
-                      Text("Dubia."),
-                      SizedBox(
+                      Text("Dubia.", style: TextStyle(color: KsmallTextKcolor, fontSize: 12),),
+                   const   SizedBox(
                         width: 3,
                       ),
-                      Text("🇦🇪 United Arab Emirates")
+                      Text("🇦🇪 United Arab Emirates", style: TextStyle(color: KsmallTextKcolor, fontSize: 12),)
                     ],
                   )
                 ],
@@ -90,7 +91,7 @@ class HomePage extends StatelessWidget {
                             children: [
                               const Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 10),
+                                    horizontal: 25, vertical: 15),
                                 child: Row(
                                   children: [
                                     Airport_details(
@@ -260,16 +261,31 @@ class HomePage extends StatelessWidget {
                                       height: 20,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         black_button(
                                           icon:
                                               "assets/svg/white_direction.svg",
                                           text: "Get direction",
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                    const    FlightPage()));
+                                          },
                                         ),
                                         black_button(
                                           icon: "assets/svg/white_call.svg",
                                           text: "Call airport",
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                    const    FlightPage()));
+                                          },
                                         ),
                                       ],
                                     ),
