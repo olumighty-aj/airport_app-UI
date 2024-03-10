@@ -18,7 +18,7 @@ class black_button extends StatelessWidget {
         height: 48,
         width: 156,
         decoration: BoxDecoration(
-            color: KPrimaryKcolor, borderRadius: BorderRadius.circular(10)),
+            color: kPrimaryKcolor, borderRadius: BorderRadius.circular(10)),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           SvgPicture.asset(icon),
           const SizedBox(
@@ -27,7 +27,7 @@ class black_button extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-                color: Colors.white, fontSize: 17, fontWeight: FontWeight.w500),
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
           )
         ]),
       ),

@@ -1,10 +1,11 @@
 
 import 'package:airport_app/constant.dart';
+import 'package:airport_app/utils/string_constant.dart';
 import 'package:airport_app/view/home/widget/public_tansport.dart';
 import 'package:flutter/material.dart';
 
-class Transport_services extends StatelessWidget {
-  const Transport_services({
+class TransportServices extends StatelessWidget {
+  const TransportServices({
     super.key,
   });
 
@@ -27,28 +28,21 @@ class Transport_services extends StatelessWidget {
               CrossAxisAlignment.start,
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 10),
+              padding: kGlobalPadding,
               child: Text(
-                "Public Transport",
-                style: TextStyle(
-                    color: KPrimaryKcolor,
-                    fontSize: 20,
-                    fontWeight:
-                        FontWeight.bold),
+                publicTransport,
+                style: headerStyle(),
               ),
             ),
             const Column(
               children: [
                 PublicTransport(
-                  icon: "assets/svg/metro.svg",
+                  icon: metro,
                   transport: "Metro",
-                  time: "6am - 10pm",
+                  time: flighttime,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical:10, horizontal: 10),
+                  padding: kGlobalPadding,
                   child: Divider(
                     thickness: 0.5,
                   ),
@@ -56,7 +50,7 @@ class Transport_services extends StatelessWidget {
                 
                 
                  PublicTransport(
-                  icon: "assets/svg/bus.svg",
+                  icon: bus,
                   transport: "Bus",
                   time: "Avaliable 24hrs",
                  ),

@@ -4,9 +4,10 @@ import 'package:flutter_svg/svg.dart';
 
 class contacts extends StatelessWidget {
   final String title;
+  final bool isLastItem;
   const contacts({
     required this.title,
-    super.key,
+    super.key, required this.isLastItem,
   });
 
   @override
@@ -21,7 +22,7 @@ class contacts extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                    color: KPrimaryKcolor,
+                    color: kPrimaryKcolor,
                     fontWeight: FontWeight.w500,
                     fontSize: 16),
               ),
@@ -29,7 +30,7 @@ class contacts extends StatelessWidget {
                 height: 37,
                 width: 50,
                 decoration: BoxDecoration(
-                    color: KContainerColor,
+                    color: kContainerColor,
                     borderRadius: BorderRadius.circular(18)),
                 child: Padding(
                   padding: const EdgeInsets.all(5),
@@ -42,7 +43,10 @@ class contacts extends StatelessWidget {
             ],
           ),
         ),
-       
+        if (!isLastItem) const Padding(
+          padding: kSmallestPadding,
+          child: Divider(),
+        ), 
       ],
     );
   }

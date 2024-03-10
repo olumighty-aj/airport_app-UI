@@ -1,4 +1,5 @@
 import 'package:airport_app/constant.dart';
+import 'package:airport_app/utils/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -19,9 +20,7 @@ class Airport_details extends StatelessWidget {
           width: 20,
           height: 20,
         ),
-        const SizedBox(
-          height: 3,
-        ),
+        verticalGap(3),
         Text(
           detail,
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
@@ -29,12 +28,11 @@ class Airport_details extends StatelessWidget {
         
         Text(
           littledetail,
-          style: TextStyle(
-              color: KsmallTextKcolor,
-              fontSize: 11,
-              fontWeight: FontWeight.normal),
+          style: smallTextStyle(),
         ),
       ],
     );
   }
+
+ 
 }

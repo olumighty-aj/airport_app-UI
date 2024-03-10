@@ -2,8 +2,8 @@ import 'package:airport_app/constant.dart';
 import 'package:airport_app/view/home/widget/small_tab.dart';
 import 'package:flutter/material.dart';
 
-class Terminal_map extends StatelessWidget {
-  const Terminal_map({
+class TerminalMap extends StatelessWidget {
+  const TerminalMap({
     super.key,
   });
 
@@ -22,41 +22,41 @@ class Terminal_map extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Text(
               "Terminal Map",
               style: TextStyle(
-                  color: KPrimaryKcolor,
+                  color: kPrimaryKcolor,
                   fontSize: 20,
                   fontWeight: FontWeight.w500),
             ),
           ),
           Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
                     smallTab(
                       title: "T1",
-                      color: KPrimaryKcolor,
+                      color: kPrimaryKcolor,
                       textColor: Colors.white,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 15,
                     ),
                     smallTab(
                       title: "T2",
-                      color: KContainerColor,
+                      color: kContainerColor,
                       textColor: Colors.black,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 15,
                     ),
                     smallTab(
                       title: "T3",
-                      color: KContainerColor,
+                      color: kContainerColor,
                       textColor: Colors.black,
                     ),
                   ],
@@ -74,7 +74,7 @@ class Terminal_map extends StatelessWidget {
                       height: 88,
                       width: 294,
                       decoration: BoxDecoration(
-                        color: KsmallTextKcolor,
+                        color: kSmallTextKcolor,
                         borderRadius: BorderRadius.circular(15),
                         image: const DecorationImage(
                             image: AssetImage("assets/img/map.png"),

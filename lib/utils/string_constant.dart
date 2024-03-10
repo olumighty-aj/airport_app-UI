@@ -1,0 +1,9 @@
+const String publicTransport = "Public Transport";
+const String flighttime = "6am - 10pm";
+const String cloudy = 'Cloudy';
+const String date = '30 Jan';
+const String day = 'Mon';
+const String flighttakeoftime = '8:45 PM';
+const String gmt = 'GMT-4';
+const String aedcurrency = 'AED';
+const String getdirection = "Get Direction";

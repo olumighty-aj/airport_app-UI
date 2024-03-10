@@ -1,4 +1,5 @@
 import 'package:airport_app/constant.dart';
+import 'package:airport_app/utils/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -18,15 +19,10 @@ class PublicTransport extends StatelessWidget {
           Row(
             children: [
               SvgPicture.asset(icon),
-              const SizedBox(
-                width: 22,
-              ),
+              horizontalGap(10),
               Text(
                 transport,
-                style: TextStyle(
-                    color: KPrimaryKcolor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+                style: mediumStyle(),
               )
             ],
           ),
@@ -34,7 +30,7 @@ class PublicTransport extends StatelessWidget {
             children: [
               Text(
                 time,
-                style: TextStyle(color: KsmallTextKcolor, fontSize: 11),
+                style: TextStyle(color: kSmallTextKcolor, fontSize: 11),
               ),
               const SizedBox(
                 width: 22,
@@ -45,5 +41,12 @@ class PublicTransport extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  TextStyle mediumStyle() {
+    return TextStyle(
+                  color: kPrimaryKcolor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500);
   }
 }

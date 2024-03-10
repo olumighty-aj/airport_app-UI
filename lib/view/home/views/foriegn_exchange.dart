@@ -42,12 +42,12 @@ class _AccordionSectionState extends State<AccordionSection> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               child: Text(
                 "Foreign exchange",
                 style: TextStyle(
-                    color: KPrimaryKcolor,
+                    color: kPrimaryKcolor,
                     fontSize: 20,
                     fontWeight: FontWeight.w500),
               ),
@@ -62,18 +62,20 @@ class _AccordionSectionState extends State<AccordionSection> {
                       return ListTile(
                         title: Text(
                           accordionData[index]['title'] ?? '',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: KPrimaryKcolor,
-                              fontWeight: FontWeight.w700),
+                          style: const TextStyle(
+                              fontSize: 14,
+                              color: kPrimaryKcolor,  
+                              fontWeight: FontWeight.w500),
                         ),
                       );
                     },
                     body: ListTile(
                       title: Text(
                         accordionData[index]['body'] ?? '',
-                        style: TextStyle(
-                          color: KsmallTextKcolor,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: kSmallTextKcolor,
                         ),
                       ),
                     ),

@@ -1,55 +1,66 @@
+import 'package:airport_app/constant.dart';
+import 'package:airport_app/utils/sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class Dropdown extends StatefulWidget {
+class CustomDropdown extends StatefulWidget {
   @override
-  _DropdownState createState() => _DropdownState();
+  _CustomDropdownState createState() => _CustomDropdownState();
 }
 
-class _DropdownState extends State<Dropdown> {
-  bool isDropdownOpen = false;
-  String selectedItem = '';
-
-  List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+class _CustomDropdownState extends State<CustomDropdown> {
+  String selectedValue = 'Option 1';
+  List<String> dropdownItems = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  Map<String, String> itemSvgPaths = {
+    'Option 1': 'assets/svg/me.svg',
+    'Option 2': 'assets/svg/friend.svg',
+    'Option 3': 'assets/svg/me.svg',
+    'Option 4': 'assets/svg/friend.svg',
+  };
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        GestureDetector(
-          onTap: () {
-            setState(() {
-              isDropdownOpen = !isDropdownOpen;
-            });
-          },
+    return DropdownButton<String>(
+      value: selectedValue,
+      onChanged: (String? value) {
+        setState(() {
+          selectedValue = value!;
+        });
+      },
+      items: dropdownItems.map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
           child: Row(
             children: [
+              if (selectedValue != value)
+                SvgPicture.asset(
+                  itemSvgPaths[value]!,
+                  width: 24,
+                  height: 24,
+                ),
+              if (selectedValue != value) horizontalGap(10),
               Text(
-                'Select an item: ',
-                style: TextStyle(fontSize: 16),
+                value,
+                style: TextStyle(
+                  fontSize: selectedValue == value ? 24 : 16,
+                  fontWeight: selectedValue == value ? FontWeight.bold : FontWeight.normal,
+                  color: selectedValue == value ? kPrimaryKcolor : kPrimaryKcolor,
+                ),
               ),
-              Icon(Icons.arrow_drop_down),
+              if (selectedValue == value)
+                Icon(
+                  Icons.check,
+                  color: Colors.green,
+                ),
             ],
           ),
-        ),
-        Visibility(
-          visible: isDropdownOpen,
-          child: DropdownButton<String>(
-            value: selectedItem,
-            items: items.map((String item) {
-              return DropdownMenuItem<String>(
-                value: item,
-                child: Text(item),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-              setState(() {
-                selectedItem = newValue!;
-              });
-            },
-          ),
-        ),
-      ],
+        );
+      }).toList(),
+      style: miniStyle(),
+      underline: Container(
+        height: 0,
+        color: Colors.transparent,
+      ),
     );
   }
 }
