@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:airport_app/constant.dart';
-import 'package:airport_app/view/home/widget/contacts.dart';
+import 'package:airport_app/view/home/atoms/contacts.dart';
 
 class ContactAirport extends StatelessWidget {
   final List<String> contactTitles = ["Police", "Lost and found", "Transport", "Head office"];

@@ -29,7 +29,7 @@ TextStyle headerStylesp() {
 
 TextStyle mediumStyle() {
   return TextStyle(
-      color: kPrimaryKcolor, fontSize: 16, fontWeight: FontWeight.w500);
+      color: kPrimaryKcolor, fontSize: 16, fontWeight: FontWeight.w600);
 }
 
 TextStyle miniStyle() {
@@ -47,7 +47,11 @@ TextStyle smallTextStyle() {
 
 TextStyle minismallTextStyle() {
   return TextStyle(
-      color: kSmallTextKcolor, fontSize: 12, fontWeight: FontWeight.normal);
+      color: kSmallTextKcolor, fontSize: 12, fontWeight: FontWeight.w500);
+}
+
+TextStyle tabsmallTextStyle() {
+  return TextStyle(fontSize: 13, fontWeight: FontWeight.w500);
 }
 
 TextStyle whitetextStyle() {

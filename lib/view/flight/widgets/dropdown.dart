@@ -9,13 +9,12 @@ class CustomDropdown extends StatefulWidget {
 }
 
 class _CustomDropdownState extends State<CustomDropdown> {
-  String selectedValue = 'Option 1';
-  List<String> dropdownItems = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  String selectedValue = 'My Flight';
+  List<String> dropdownItems = ['My Flight', 'My Friend', ];
   Map<String, String> itemSvgPaths = {
-    'Option 1': 'assets/svg/me.svg',
-    'Option 2': 'assets/svg/friend.svg',
-    'Option 3': 'assets/svg/me.svg',
-    'Option 4': 'assets/svg/friend.svg',
+    'My Flight': 'assets/svg/me.svg',
+    'My Friend': 'assets/svg/friend.svg',
+   
   };
 
   @override

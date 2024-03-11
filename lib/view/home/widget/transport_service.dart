@@ -1,7 +1,7 @@
 
 import 'package:airport_app/constant.dart';
 import 'package:airport_app/utils/string_constant.dart';
-import 'package:airport_app/view/home/widget/public_tansport.dart';
+import 'package:airport_app/view/home/atoms/public_tansport.dart';
 import 'package:flutter/material.dart';
 
 class TransportServices extends StatelessWidget {

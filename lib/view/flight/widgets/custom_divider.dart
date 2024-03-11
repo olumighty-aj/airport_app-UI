@@ -8,10 +8,13 @@ class CustomBoarder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Divider(
-      color: kSmallTextKcolor,
-      height: 1.5,
-    thickness: .1,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: const Divider(
+        color: kSmallTextKcolor,
+        height: 1.5,
+      thickness: .1,
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:airport_app/constant.dart';
-import 'package:airport_app/view/home/widget/small_tab.dart';
+import 'package:airport_app/view/home/atoms/small_tab.dart';
 import 'package:flutter/material.dart';
 
 class TerminalMap extends StatelessWidget {

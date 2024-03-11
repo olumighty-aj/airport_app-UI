@@ -1,7 +1,7 @@
 import 'package:airport_app/constant.dart';
 import 'package:airport_app/utils/sizer.dart';
-import 'package:airport_app/view/home/widget/parking_details.dart';
-import 'package:airport_app/view/home/widget/small_tab.dart';
+import 'package:airport_app/view/home/atoms/parking_details.dart';
+import 'package:airport_app/view/home/atoms/small_tab.dart';
 import 'package:flutter/material.dart';
 
 class SelfParking extends StatelessWidget {
@@ -64,7 +64,7 @@ class SelfParking extends StatelessWidget {
                   typeofTrans: "Car Parking",
                   price: 100,
                 ),
-                
+
              const  ParkingDetails(
                   icon: "assets/svg/fastcar.svg",
                   typeofTrans: "Electric Car Parking",

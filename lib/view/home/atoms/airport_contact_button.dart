@@ -1,5 +1,5 @@
 import 'package:airport_app/view/flight/flight_page.dart';
-import 'package:airport_app/view/home/widget/black_button.dart';
+import 'package:airport_app/view/home/atoms/black_button.dart';
 import 'package:flutter/material.dart';
 
 Row AirportContactButton(BuildContext context) {
